@@ -1,0 +1,54 @@
+# Create super class called Vehicle
+class Vehicle:
+    def __init__(self, vehicle_type): 
+        # Initialize the Vehicle object with a vehicle_type attribute    
+        self.vehicle_type = vehicle_type
+
+    # Function to display basic information about the vehicle
+    def display_info(self):
+        print("Vehicle type:", self.vehicle_type)
+
+# Create child class called Automobile
+class Automobile(Vehicle):
+    def __init__(self, vehicle_type, year, make, model, doors, roof):
+        # Initialize the Automobile object with attributes inherited from Vehicle
+        super().__init__(vehicle_type)
+        # Additional attributes specific to Automobile
+        self.year = year
+        self.make = make
+        self.model = model
+        self.doors = doors
+        self.roof = roof
+
+    # Function to display detailed information about the automobile
+    def display_info(self):
+        # Call display_info function of the super class
+        super().display_info()  
+
+        print("Year:", self.year)
+        print("Make:", self.make)
+        print("Model:", self.model)
+        print("Number of doors:", self.doors)
+        print("Type of roof:", self.roof)
+
+
+def main():   
+    # Default vehicle type as car that requested by assignment's requirement which accepts user input for a car
+    vehicle_type = "Car" 
+    # Accept user input for car details
+    year = input("Enter the year of the car: ")
+    make = input("Enter the make of the car: ")
+    model = input("Enter the model of the car: ")
+    doors = input("Enter the number of doors (2 or 4): ")
+    roof = input("Enter the type of roof (solid or sun roof): ")
+
+    # Create an instance of Automobile with user's input
+    car = Automobile(vehicle_type, year, make, model, doors, roof)
+
+    # Display the information of the car
+    print("\nVehicle Information:")
+    car.display_info()
+
+
+if __name__ == "__main__":
+    main()
