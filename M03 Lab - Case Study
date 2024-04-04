@@ -1,3 +1,7 @@
+# Author: Thi Nguyen
+# File Name: M03 Lab - Case Study.py
+# Description: This Python application is designed to capture and display information about car
+
 # Create super class called Vehicle
 class Vehicle:
     def __init__(self, vehicle_type): 
